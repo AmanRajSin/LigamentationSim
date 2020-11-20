@@ -60,7 +60,7 @@ def animate(window, canvas, radius=50, vel=50, d=2, scale=1, slow=1, colour = '#
     root.printTree()           # Inorder Tree Display
 
     # Initial single particle animation
-    for frame in range(1, 60):
+    for frame in range(1, 30):
         canvas.delete('all')                                                                                            # Clear canvas
         x = (radius*scale) + (frame*scale*vel/20)                                                                       # x Coordinate
         canvas.create_oval(x-radius*scale, 250-radius*scale, x+radius*scale, 250+radius*scale, fill=colour, outline='') # Draw particle
@@ -77,7 +77,7 @@ def animate(window, canvas, radius=50, vel=50, d=2, scale=1, slow=1, colour = '#
             R = shape[0].parent.getInfo()[0]
 
             # Calculating x & y coordinates
-            x = (radius+ 3*vel + frame*vel/20)*scale
+            x = (radius+ 3*vel/2 + frame*vel/20)*scale
             y1 = 250+sum([(frame-(60*i))*yfac1[i+1]/30 for i in range(math.ceil(frame/60))])*scale
             y2 = 250+sum([(frame-(60*i))*yfac2[i+1]/30 for i in range(math.ceil(frame/60))])*scale
 
