@@ -31,8 +31,8 @@ class Node:
             yr = abs((ratio/(1+ratio))**0.5)
 
             # Build tree
-            self.left = Node(self.size*yr, d-1, self.yfac+[yl*size], self)
-            self.right = Node(self.size*yl, d-1, self.yfac+[-yr*size], self)
+            self.left = Node(self.size*yr, d-1, self.yfac+[yl*yl*size], self)
+            self.right = Node(self.size*yl, d-1, self.yfac+[-yr*yr*size], self)
 
             # Add nodes to levels
             Levels[depth-d].append([self.right, self.left])
